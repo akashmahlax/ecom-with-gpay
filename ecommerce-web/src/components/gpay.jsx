@@ -18,32 +18,30 @@ const Checkout = () => {
       apiVersionMinor: 0,
       allowedPaymentMethods: [
         {
-          type: "CARD",
+          type: 'CARD',
           parameters: {
-            allowedAuthMethods: ["PAN_ONLY", "CRYPTOGRAM_3DS"],
-            allowedCardNetworks: ["MASTERCARD", "VISA"],
+            allowedAuthMethods: ['PAN_ONLY', 'CRYPTOGRAM_3DS'],
+            allowedCardNetworks: ['MASTERCARD', 'VISA', 'RUPAY'],
           },
           tokenizationSpecification: {
-            type: "PAYMENT_GATEWAY",
+            type: 'PAYMENT_GATEWAY',
             parameters: {
-              gateway: "stripe", // Use your payment gateway
-              gatewayMerchantId: "your_stripe_merchant_id", // Replace with actual ID
+              gateway: 'example',
+              gatewayMerchantId: 'exampleMerchantId',
             },
           },
         },
       ],
       merchantInfo: {
-        merchantId: "your_google_merchant_id", // Use your actual merchant ID
-        merchantName: "Akash Mahla",
+        merchantId: '342562999088',
+        merchantName: 'Akash Mahla',
       },
       transactionInfo: {
-        totalPriceStatus: "FINAL",
-        totalPrice: product?.price.replace('$', ''),
-        currencyCode: "INR",
+        totalPriceStatus: 'FINAL',
+        totalPrice: product?.price.replace('$', ''), // Price in USD (adjust accordingly)
+        currencyCode: 'USD',
       },
     };
-
-    // Initialize Google Pay API    
 
     const paymentsClient = new window.google.payments.api.PaymentsClient({
       environment: 'TEST',
