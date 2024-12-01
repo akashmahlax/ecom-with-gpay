@@ -1,4 +1,6 @@
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useCart } from './CartContext';
 
 const products = [
   { id: 1, name: 'T-Shirt', price: '$120', image: 'https://images.unsplash.com/photo-1602810320073-1230c46d89d4?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c2hpcnRzfGVufDB8fDB8fHww' },
@@ -8,9 +10,9 @@ const products = [
 
 const Products = () => {
   const navigate = useNavigate();
+  const { addToCart, isInCart } = useCart();
 
   const handleBuyNow = (product) => {
-    // Redirect to the checkout page with the product details
     navigate('/checkout1', { state: { product } });
   };
 
@@ -21,14 +23,22 @@ const Products = () => {
           <img
             src={product.image}
             alt={product.name}
-            className="rounded-t-lg w-full h-48 object-contain"
+            className="rounded-t-lg w-full h-48 object-cover"
           />
           <div className="p-4">
             <h2 className="text-lg font-bold">{product.name}</h2>
             <p className="text-gray-500">{product.price}</p>
             <div className="mt-2 flex space-x-2">
-              <button className="px-4 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600">
-                Add to Cart
+              <button
+                onClick={() => addToCart(product)}
+                disabled={isInCart(product.id)}
+                className={`px-4 py-2 rounded-full ${
+                  isInCart(product.id)
+                    ? 'bg-gray-500 text-white cursor-not-allowed'
+                    : 'bg-blue-500 text-white hover:bg-blue-600'
+                }`}
+              >
+                {isInCart(product.id) ? 'Added to Cart' : 'Add to Cart'}
               </button>
               <button
                 onClick={() => handleBuyNow(product)}

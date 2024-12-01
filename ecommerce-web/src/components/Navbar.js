@@ -1,5 +1,5 @@
 import { FaShoppingCart } from 'react-icons/fa';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const Navbar = () => {
   return (
@@ -10,7 +10,7 @@ const Navbar = () => {
         <NavLink to="/products" className="hover:text-yellow-500">Products</NavLink>
         <NavLink to="/contact" className="hover:text-yellow-500">Contact</NavLink>
       </div>
-      <FaShoppingCart className="text-2xl cursor-pointer" />
+      <Link to="/cart" className="flex items-center hover:text-yellow-500"><FaShoppingCart className="mr-2" /> Cart</Link>
     </nav>
   );
 };
