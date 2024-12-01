@@ -10,7 +10,7 @@ const App = () => {
           type: "CARD",
           parameters: {
             allowedAuthMethods: ["PAN_ONLY", "CRYPTOGRAM_3DS"],
-            allowedCardNetworks: ["MASTERCARD", "VISA"],
+            allowedCardNetworks: ["MASTERCARD", "VISA", "RUPAY"],
           },
           tokenizationSpecification: {
             type: "PAYMENT_GATEWAY",
@@ -78,9 +78,9 @@ const App = () => {
       <img src="https://images.unsplash.com/photo-1506193095-80bc749473f2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8d2F0Y2h8ZW58MHx8MHx8fDA%3D" alt="product img" className="w-40 h-40 mb-6 m-2 rounded-2xl " />
       <div className="w-40 h-40 mb-6">
         <h1>about</h1>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor illo pariatur veritatis saepe expedita cum quasi quos illum similique quia? </div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil obcaecati distinctio qui, illo, iure, sunt pariatur nisi in doloribus autem impedit debitis ad laudantium libero iste vitae inventore fugiat deleniti! Dolor similique adipisci ducimus fuga. </div>
       </div>
-      <h1 className="text-3xl font-bold mb-6">Buy this product</h1>
+      <h1 className="text-3xl font-bold mb-6">Buy This Product</h1>
       <p className="text-lg text-black mb-4">Price: ₹1</p>
       <div id="google-pay-button"></div>
     </div>
