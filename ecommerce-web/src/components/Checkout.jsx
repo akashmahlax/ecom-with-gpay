@@ -63,7 +63,7 @@ const App = () => {
         const button = paymentsClient.createButton({
           onClick: onGooglePayButtonClicked,
         });
-        document.getElementById("google-pay-button").appendChild(button);
+        document.getElementById("google-pay").appendChild(button);
       } else {
         console.error("Google Pay API script not loaded.");
       }
@@ -82,7 +82,7 @@ const App = () => {
       </div>
       <h1 className="text-3xl font-bold mb-6">Buy This Product</h1>
       <p className="text-lg text-black mb-4">Price: ₹1</p>
-      <div id="google-pay-button"></div>
+      <div id="google-pay"></div>
     </div>
   );
 };
