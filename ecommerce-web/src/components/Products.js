@@ -11,11 +11,11 @@ const Products = () => {
 
   const handleBuyNow = (product) => {
     // Redirect to the checkout page with the product details
-    navigate('/checkout', { state: { product } });
+    navigate('/checkout1', { state: { product } });
   };
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
+    <div className="grid grid-cols-1 bg-slate-400 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
       {products.map((product) => (
         <div key={product.id} className="bg-white rounded-lg shadow-md">
           <img
