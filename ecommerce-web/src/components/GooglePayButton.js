@@ -4,7 +4,7 @@ const GooglePayButton = () => {
   useEffect(() => {
     if (window.google && window.google.payments.api.PaymentsClient) {
       const paymentsClient = new window.google.payments.api.PaymentsClient({
-        environment: "TEST", // Change to "PRODUCTION" in production
+        environment: "PRODUCTION", // Change to "PRODUCTION" in production
       });
 
       const paymentRequest = {
@@ -20,7 +20,7 @@ const GooglePayButton = () => {
             tokenizationSpecification: {
               type: "PAYMENT_GATEWAY",
               parameters: {
-                gateway: "example", // Replace with your gateway (e.g., "stripe", "razorpay")
+                gateway: "GOOGLEPAY", // Replace with your gateway (e.g., "stripe", "razorpay")
                 gatewayMerchantId: "your-merchant-id", // Replace with your Merchant ID from the console
               },
             },
