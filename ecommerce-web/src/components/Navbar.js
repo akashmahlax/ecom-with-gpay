@@ -5,7 +5,7 @@ import SearchBox from './Nav2';
 const Navbar = () => {
   return (
     <nav className="flex justify-between items-center p-4 bg-gray-800 text-white">
-      <h1 className="text-2xl font-bold">ShopEase</h1>
+      <h1 className="text-2xl font-bold">Akash Shop</h1>
       <div className="flex space-x-6">
         <NavLink to="/" className="hover:text-yellow-500">Home</NavLink>
         <NavLink to="/men" className="hover:text-yellow-500">Men</NavLink>
