@@ -6,7 +6,7 @@ const Hero = () => {
 
   const handleshopNow = (product) => {
     // Redirect to the checkout page with the product details
-    navigate('/products', { state: { product } });
+    navigate('/men', { state: { product } });
   };
   return (
     <motion.div 

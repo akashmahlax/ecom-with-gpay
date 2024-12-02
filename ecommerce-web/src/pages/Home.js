@@ -2,6 +2,8 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Hero from '../components/Hero';
 import Products from '../components/Products';
+import ProductCollection from '../components/ProductCollection';
+
 
 const collections = [
   { id: 1, name: 'Men', image: 'https://via.placeholder.com/300x200?text=Men+Collection' },
@@ -21,11 +23,13 @@ const HomePage = () => {
     <div className="min-h-screen bg-gray-100 p-6">
         <Hero/>
         <Products/>
+        <ProductCollection/>
+      
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {collections.map((collection) => (
           <div
             key={collection.id}
-            className="bg-white rounded-lg shadow-md cursor-pointer"
+            className="bg-black text-slate-600 rounded-lg shadow-md cursor-pointer"
             onClick={() => handleCollectionClick(collection.name)}
           >
             <img
